@@ -24,8 +24,11 @@ function navbar() {
   //console.log(user.user.email);
   
   const logout = () =>{
-    
     localStorage.clear('user')
+    window.location.href = '/login'
+  }
+
+  const login = () =>{
     window.location.href = '/login'
   }
 
@@ -85,11 +88,15 @@ function navbar() {
                   </Link>
                 </div> : ""}
 
-                  {user ? <div className="flow-root">
+                  {user ? <div onClick={logout} className="flow-root">
                     <a className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Logout
                     </a>
-                  </div> : ""}
+                  </div> : <div onClick={login} className="flow-root">
+                    <a className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                      Login
+                    </a>
+                  </div>}
                   <div className="flow-root">
                     <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
                       <img
@@ -162,7 +169,9 @@ function navbar() {
                   
                   {user? <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
-                  </a> : ""}
+                  </a> : <a onClick={login} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    Login
+                  </a>}
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
