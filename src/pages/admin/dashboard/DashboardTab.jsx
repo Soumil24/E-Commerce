@@ -4,10 +4,11 @@ import myContext from '../../../context/data/Mycontext';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { FaUser, FaCartPlus } from 'react-icons/fa';
 import { AiFillShopping, AiFillPlusCircle, AiFillDelete } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function DashboardTab() {
     const context = useContext(myContext)
+    const navigate = useNavigate()
     const { mode, product, edithandle, deleteProduct, order, user } = context
     let [isOpen, setIsOpen] = useState(false)
 
@@ -22,7 +23,8 @@ function DashboardTab() {
     }
 
     const AddProductBtn = () => {
-        window.location.href = '/addproduct'
+        //window.location.href = '/addproduct'
+        navigate(`/addproduct`)
     }
     return (
         <>
