@@ -5,6 +5,7 @@ import Layout from '../../components/layout/Layout'
 import myContext from '../../context/data/Mycontext'
 import { useDispatch, useSelector } from 'react-redux'
 import { addtocart } from '../../redux/cartSlice'
+import { useNavigate } from 'react-router-dom'
 
 function Allproducts() {
   const context = useContext(myContext)
@@ -27,6 +28,8 @@ function Allproducts() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  
+  const navigate = useNavigate();
 
   return (
     <Layout>
