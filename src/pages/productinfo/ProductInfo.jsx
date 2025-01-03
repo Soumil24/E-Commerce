@@ -10,7 +10,7 @@ import { fireDB } from '../../firebase/FirebaseConfig';
 
 function ProductInfo() {
     const context = useContext(myContext);
-    const { loading, setLoading } = context;
+    const { mode, loading, setLoading } = context;
 
     const [products, setProducts] = useState('')
     const params = useParams()
@@ -70,7 +70,7 @@ function ProductInfo() {
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">
                                 Demo Project
                             </h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1" style={{ color: mode === 'dark' ? 'white' : '' }}>
                                 {products.title}
                             </h1>
                             <div className="flex mb-4">

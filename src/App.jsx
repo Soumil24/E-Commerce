@@ -17,13 +17,16 @@ import 'react-toastify/dist/ReactToastify.css'
 import Allproduct from './pages/allproduct/Allproduct'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Mystate>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={
+            <CheckUser>
+              <Home />
+            </CheckUser>
+          } />
           <Route path='/order' element={
             <ProtectedRoute>
               <Order/>
@@ -68,13 +71,19 @@ export const ProtectedRoute = ({children}) =>{
     return children
   } else {
     console.log("errorpr");
-    
     return <Navigate to={'/login'}/>
   }
 }
 
-
-
+export const CheckUser = ({children}) =>{
+  const user = localStorage.getItem("user")
+  if (user) {
+    return children
+  } else {
+    console.log("No User found");
+    return <Navigate to={'/login'}/>
+  }
+}
 
 export const ProtectedRouteForAdmin = ({children}) =>{
   
@@ -85,5 +94,17 @@ export const ProtectedRouteForAdmin = ({children}) =>{
     console.log("errorprfa");
     return <Navigate to={'/login'}/>
     
+  }
+}
+
+
+export const UserCheck = ({children}) =>{
+  
+  const user = JSON.parse(localStorage.getItem('user'))
+  if (user) {
+    return children
+  } else {
+    console.log("No login");
+    return <Navigate to={'/login'}/>
   }
 }
