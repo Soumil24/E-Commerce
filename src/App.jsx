@@ -47,6 +47,7 @@ function App() {
               <Updateproduct />
             </ProtectedRouteForAdmin>
           } />
+          <Route path='allproducts/productinfo/:id' element={<ProductInfo />} />
           <Route path='/productinfo/:id' element={<ProductInfo />} />
           <Route path='/allproducts' element={<Allproduct />} />
           <Route path='/*' element={<Nopage />} />
