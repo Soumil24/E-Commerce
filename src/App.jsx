@@ -22,7 +22,7 @@ function App() {
     <Mystate>
       <Router>
         <Routes>
-          <Route path="/" element={
+          <Route path="" element={
             <CheckUser>
               <Home />
             </CheckUser>
