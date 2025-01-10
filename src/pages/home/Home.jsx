@@ -31,8 +31,8 @@ function Home() {
         <Filter/>
         <ProductCard/>
         <div className= ' w-screen flex items-center justify-center'>
-        <button className='px-2 py-1 rounded-xl font-medium text-base bg-gray-300' onClick={()=> navigate("/allproducts")}> View More </button>
-        
+        <button className='px-2 py-1 rounded-xl font-medium text-base bg-gray-300' onClick={()=> navigate("/allproducts")}> View More Products </button>
+
         </div>
         <Track/>
         <Testimonial/>
