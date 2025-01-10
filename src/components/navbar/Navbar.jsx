@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Dialog, Transition } from '@headlessui/react'
 import { RxCross2 } from 'react-icons/rx'
 import { useSelector } from 'react-redux'
-import { use } from 'react'
 
 function navbar() {
   const [open, setOpen] = useState(false)
