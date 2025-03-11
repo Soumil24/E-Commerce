@@ -203,7 +203,7 @@ function DashboardTab() {
                                                                 ₹{price}
                                                             </td>
                                                             <td className="px-6 py-4 text-black " style={{ color: mode === 'dark' ? 'white' : '' }}>
-                                                                {description}
+                                                                {category}
                                                             </td>
 
                                                             <td className="px-6 py-4 text-black " style={{ color: mode === 'dark' ? 'white' : '' }}>
